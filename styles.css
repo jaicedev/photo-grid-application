@@ -1,0 +1,148 @@
+html,
+body {
+    font-family: 'Lato', sans-serif;
+}
+.navcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-shadow: 0 1rem 1rem -1rem gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+.nav {
+    font-size: 2rem;
+}
+.nav-list {
+    list-style: none;
+    padding-left: 0px;
+    margin: 1rem 4rem;
+}
+.nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+    text-shadow: 1px 1px 1px lightgray;
+}
+.nav-link:hover {
+    color:gray;
+}
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    box-shadow: 0 1rem 1rem -1rem gray;
+    background:url(https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+.tagline {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bolder;
+    text-shadow: 5px 5px 5px black;
+    /* background-color: rgb(116, 131, 146, 0.2);
+    padding: 3rem;
+    border-radius: 3%; */
+}
+.subheading {
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+    /* background-color: rgb(116, 131, 146, 0.2);
+    padding: 3rem;
+    border-radius: 3%; */
+}
+.resume {
+    color: white;
+    border:none;
+    min-width: 10rem;
+    min-height: 5rem;
+    margin-bottom: 2rem;
+    background-color: lightslategray;
+    box-shadow: 5px 5px 20px black;
+}
+.resume a {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+}
+.resume:hover {
+    background-color:rgb(96, 108, 121);
+}
+.resume a:hover{
+    color:white;
+}
+.social-icons a{
+    color:white;
+    margin: 0 1rem;
+    font-size: 5vh;
+}
+.social-icons a:hover {
+    color: lightslategray;
+}
+.headshot {
+    border-radius: 100%;
+    height: 35vh;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.about-info {
+    font-size: 2rem;
+    text-align: center;
+}
+.font-up {
+    font-size: 2rem;
+}
+.stack {
+    text-align: center;
+    font-weight: bolder;
+    color: lightslategray;
+}
+.stackicon{
+    color: lightslategray;
+    font-size: 7rem;
+    text-align: center;
+}
+.portfolio-card {
+    border: 1px solid lightslategray;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 3px 3px 7px rgb(90, 90, 90);
+    margin-bottom: 3rem;
+}
+.card-image {
+    width: 100%;
+    border-radius: 2%;
+}
+.project-title {
+    font-size: 2.5rem;
+}
+.port-lang-logo {
+    font-size: 2.5rem;
+}
+.portfolio-desc {
+    font-style: italic;
+    font-size: 1.6rem;
+}
+footer {
+    background: lightslategray;
+    color:white;
+    padding: 1rem 0;
+    box-shadow: 0 -1rem 1rem -1rem gray;
+}
+.copy {
+    margin-bottom: 0;
+}
