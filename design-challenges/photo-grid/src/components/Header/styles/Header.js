@@ -38,7 +38,7 @@ export const SocialList = styled.ul`
 `;
 
 export const Icon = styled.a`
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin: 0 1rem;
   text-decoration: none;
   color: #66bfbf;
