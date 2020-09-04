@@ -6,6 +6,7 @@ export function Size(props) {
   const [value, setValue] = useState(0);
 
   const handleChange = (e) => {
+    props.function(e);
     setValue(e.target.value);
   };
 

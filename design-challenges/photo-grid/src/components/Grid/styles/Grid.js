@@ -32,10 +32,10 @@ export const GridSquare = styled.div`
     background-color: ${(props) => (props.selector ? "#66bfbf" : "#8d93ab")};
     cursor: ${(props) => (props.selector ? "pointer" : "default")};
   }
-`;
 
-export const GridInfo = styled.p`
-  text-align: center;
-  align-items: center;
-  color: #056674;
+  p {
+    text-align: center;
+    align-items: center;
+    color: #056674;
+  }
 `;

@@ -1,12 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import Grid from "../Grid";
 import Header from "../Header";
 import UserInput from "../UserInput";
 import ImageContainer from "../ImageContainer";
 import { createGlobalStyle } from "styled-components";
-import { Provider } from "react-redux";
-
-import store from "../State";
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -21,16 +18,54 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-function App() {
-  return (
-    <Provider store={store}>
-      <GlobalStyle />
-      <Header />
-      <Grid />
-      <UserInput />
-      <ImageContainer />
-    </Provider>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      size: 1,
+      dimension: 0,
+      grayscale: 0,
+      blur: 0,
+    };
+  }
+
+  onSizeChange = (value) => {
+    this.setState({
+      size: value,
+    });
+  };
+  onDimesionChange = (e) => {
+    this.setState({
+      dimension: e.target.value,
+    });
+  };
+  onGrayscaleChange = (e) => {
+    this.setState({
+      grayscale: e.target.value,
+    });
+  };
+  onBlurChange = (e) => {
+    this.setState({
+      blur: e.target.value,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+        <Header />
+        <Grid function={this.onSizeChange} />
+        <UserInput
+          onDimensionChange={this.onDimesionChange}
+          onGrayscaleChange={this.onGrayscaleChange}
+          onBlurChange={this.onBlurChange}
+        />
+        <ImageContainer state={this.state} />
+      </>
+    );
+  }
 }
 
 export default App;

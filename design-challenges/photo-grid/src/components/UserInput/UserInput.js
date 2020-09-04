@@ -13,7 +13,10 @@ class UserInput extends React.Component {
   render() {
     return (
       <GenerationForm onSubmit={this.submitHandler}>
-        <Size size={this.props.getSize} label="Grid Dimensions ( Pixels )" />
+        <Size
+          function={this.props.onDimensionChange}
+          label="Grid Dimensions ( Pixels )"
+        />
         <Grayscale>
           <Slider
             typeDesc="UPDATE_GRAYSCALE"
@@ -21,6 +24,7 @@ class UserInput extends React.Component {
             max="100"
             label="Grayscale ( % )"
             name="grayscale"
+            function={this.props.onGrayscaleChange}
           />
         </Grayscale>
         <ImageBlur>
@@ -30,6 +34,7 @@ class UserInput extends React.Component {
             max="100"
             label="Image Blur ( % ) "
             name="blur"
+            function={this.props.onBlurChange}
           />
         </ImageBlur>
         <Button text="Generate" />
