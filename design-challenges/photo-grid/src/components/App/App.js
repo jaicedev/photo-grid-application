@@ -4,6 +4,9 @@ import Header from "../Header";
 import UserInput from "../UserInput";
 import ImageContainer from "../ImageContainer";
 import { createGlobalStyle } from "styled-components";
+import { Provider } from "react-redux";
+
+import store from "../State";
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -20,13 +23,13 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
       <Header />
       <Grid />
       <UserInput />
       <ImageContainer />
-    </>
+    </Provider>
   );
 }
 

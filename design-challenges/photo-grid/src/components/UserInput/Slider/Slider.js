@@ -7,18 +7,9 @@ import {
 } from "./styles/Slider";
 import { InputLabel } from "../styles/UserInput";
 
-export default class Slider extends React.Component {
-  state = {
-    value: 0,
-  };
-
-  handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
-
+class Slider extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <Container>
         <InputLabel>{this.props.label}</InputLabel>
@@ -26,15 +17,17 @@ export default class Slider extends React.Component {
           type="range"
           min={0}
           max={this.props.max}
-          value={this.state.value}
-          onChange={this.handleChange}
+          value={0}
+          onChange={this.updateCorrespondingState}
         />
         <ValueContainer>
           <ValueDisplay left>{this.props.min}</ValueDisplay>
-          <ValueDisplay middle>{this.state.value}</ValueDisplay>
+          <ValueDisplay middle>1</ValueDisplay>
           <ValueDisplay>{this.props.max}</ValueDisplay>
         </ValueContainer>
       </Container>
     );
   }
 }
+
+export default Slider;
