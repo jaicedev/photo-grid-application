@@ -2,17 +2,11 @@ import React from "react";
 import { GenerationForm, Grayscale, ImageBlur } from "./styles/UserInput";
 import Size from "./Size";
 import Slider from "./Slider/";
-import Button from "./Button";
 
 class UserInput extends React.Component {
-  submitHandler = (e) => {
-    e.preventDefault();
-    console.log("Hello");
-  };
-
   render() {
     return (
-      <GenerationForm onSubmit={this.submitHandler}>
+      <GenerationForm>
         <Size
           function={this.props.onDimensionChange}
           label="Grid Dimensions ( Pixels )"
@@ -37,7 +31,6 @@ class UserInput extends React.Component {
             function={this.props.onBlurChange}
           />
         </ImageBlur>
-        <Button text="Generate" />
       </GenerationForm>
     );
   }

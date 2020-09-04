@@ -1,9 +1,45 @@
 import React, { Component } from "react";
-import { Container } from "./styles/ImageContainer";
+import { Container, ButtonContainer, Generate } from "./styles/ImageContainer";
+import fetchImages from "../../helpers/FetchImages";
+import styled from "styled-components";
 
-export class ImageContainer extends Component {
+const ImageRowContainer = styled.li`
+  width: 100%;
+`;
+const RowImage = styled.img`
+  width: 100%;
+`;
+
+class ImageContainer extends Component {
+  state = {
+    imageLinks: [],
+  };
+
+  handleImages = () => {
+    let urlList = fetchImages(this.props.state);
+    this.setState(
+      {
+        imageLinks: urlList,
+      },
+      () => console.log(this.state.imageLinks)
+    );
+  };
+
   render() {
-    return <Container>Test</Container>;
+    return (
+      <>
+        <ButtonContainer>
+          <Generate onClick={this.handleImages}>Generate</Generate>
+        </ButtonContainer>
+        <Container>
+          {this.state.imageLinks.map((image) => (
+            <ImageRowContainer>
+              <RowImage src={image}></RowImage>
+            </ImageRowContainer>
+          ))}
+        </Container>
+      </>
+    );
   }
 }
 

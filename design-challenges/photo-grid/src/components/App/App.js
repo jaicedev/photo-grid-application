@@ -4,6 +4,7 @@ import Header from "../Header";
 import UserInput from "../UserInput";
 import ImageContainer from "../ImageContainer";
 import { createGlobalStyle } from "styled-components";
+import fetchImages from "../../helpers/FetchImages";
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -27,6 +28,7 @@ class App extends Component {
       dimension: 0,
       grayscale: 0,
       blur: 0,
+      photos: [],
     };
   }
 
@@ -62,7 +64,7 @@ class App extends Component {
           onGrayscaleChange={this.onGrayscaleChange}
           onBlurChange={this.onBlurChange}
         />
-        <ImageContainer state={this.state} />
+        <ImageContainer function={fetchImages} state={this.state} />
       </>
     );
   }
